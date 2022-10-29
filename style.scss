@@ -1,0 +1,66 @@
+@mixin divDecoration($colorText, $colorBorder, $colorBack) {
+    width: 500px;
+    height: 20px;
+    border: solid 3px;
+    border-radius: 7px;
+    margin: 10px auto;
+    padding: 30px;
+    font-size: 20px;
+    color: $colorText;
+    border-color: $colorBorder;
+    background-color: $colorBack;
+}
+
+.div1 {
+    @include divDecoration($colorText: white, $colorBorder: green, $colorBack: rgb(84, 201, 84));
+}
+
+.div2 {
+    @include divDecoration($colorText: white, $colorBorder: black, $colorBack: red);
+}
+
+
+
+@mixin inputButtonDecoration($colorTextButton: white, $colorBackgroundButton: lightblue) {
+    margin: 3px;
+    padding: 3px;
+    color: $colorTextButton;
+    background-color: $colorBackgroundButton;
+    cursor: pointer;
+}
+
+
+
+@mixin paraDecoration($fontForPara, $sizePara, $colorPara) {
+    font-family: $fontForPara;
+    font-size: $sizePara;
+    color: $colorPara;
+}
+
+
+
+.container {
+
+    border: solid 5px grey;
+    border-radius: 7px;
+    padding: 15px;
+    width: 40%;
+    margin: 0 auto;
+
+    #para1 {
+        @include paraDecoration($fontForPara: Arial, $sizePara: 20px, $colorPara: orange);
+    }
+
+    #para2 {
+        @include paraDecoration($fontForPara: Impact, $sizePara: 20px, $colorPara: brown);
+    }
+
+    #Reset {
+        @include inputButtonDecoration();
+    }
+
+    #Submit {
+        @include inputButtonDecoration($colorBackgroundButton: pink)
+    }
+    
+}
